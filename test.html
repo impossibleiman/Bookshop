@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshop</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+</head>
+
+<body>
+
+    <div class="topnav">
+        <div class="burger">
+            <button class="topicon" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <div id="Links" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        
+        </div>
+        
+        <div class="title">
+            <h1>Bookshop</h1>
+        </div>
+        
+        <div class="search">
+            <form oninput="filterBooks()">
+                <input type="text" placeholder="Search by name or author" name="search">
+            </form>
+        </div>
+
+        <div class="cart">
+            <button onclick="toggleCart()">Cart</button>
+            <div id="cartItems" class="hidden-reverse">
+                <h3>Your Items</h3>
+                <button id="checkoutbutton">Checkout</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        function toggleMenu() {
+          var x = document.getElementById("Links");
+          x.classList.toggle("slide-in");
+        }
+
+        function filterBooks() {
+            const input = document.querySelector('input[name="search"]');
+            const filter = input.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const author = card.getAttribute('data-author').toLowerCase();
+                if (title.includes(filter) || author.includes(filter)) {
+                    card.style.display = ""; // Show matching card
+                } else {
+                    card.style.display = "none"; // Hide non-matching card
+                }
+            });
+        }
+
+        function toggleCart() {
+            var x = document.getElementById("cartItems");
+            x.classList.toggle("slide-in-reverse");
+        }
+
+        function checkout(){
+            //Bring Items in cart to payment screen
+        }
+    </script>
+
+    <div class="container">
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                    <div class="arrow">
+                        <p>→</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                    <button onclick="location.href='pay.html'">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="On Earth We're Briefly Gorgeous" data-author="Ocean Vuong">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book2.jpg" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>On Earth We're Briefly Gorgeous</h2>
+                    <h4>By Ocean Vuong</h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Across the River and into The Trees" data-author="Ernest Hemingway">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book3.jpg" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Across the River and into The Trees</h2>
+                    <h4>By Ernest Hemingway</h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Dune" data-author="Frank Herbert">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h2>Dune</h2>
+                    <h4>By Frank Herbert</h4>
+                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</html>

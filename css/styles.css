@@ -1,0 +1,91 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: Arial, sans-serif;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 10px;
+    display: flex; /* Change to flex*/
+    justify-content: space-around; /* Distribute buttons evenly */
+    align-items: center;
+}
+
+nav ul li {
+    justify-content: space-between;
+    margin-left: 1%;
+}
+
+nav ul li a {
+    background-color: #1e1e1e; /* Darker background for links */
+    color: #ffffff; /* White text for links */
+
+    padding: 10px 20px; /* Padding for better spacing */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    background-color: #45a049; /* Green on hover */
+}
+
+.book-info button {
+    background-color: #454545; /* Dark button background */
+    color: #ffffff; /* White text for button */
+}
+
+.book-info button:hover {
+    background-color: #45a049; /* Green on hover */
+
+}
+
+img {
+    width: 200px;
+    height: 300px;
+}
+
+
+.title{
+    text-align: center;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow books to wrap */
+    justify-content: center; /* Center the book elements */
+}
+
+.book {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 35%; /* Set width to 40% for 2x2 layout */
+    margin: 20px; /* Maintain margin for spacing */
+}
+
+.book img {
+    margin-right: 20px; /* Space between image and text */
+}
+
+.book-info {
+    display: inline-flex;
+    flex-direction: column; /* Stack text and button vertically */
+}
+
+.book-info button {
+    width: 50px; /* Set a fixed width for the button */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .book {
+        width: 100%;
+    }
+}
