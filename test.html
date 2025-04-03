@@ -12,11 +12,13 @@
 
     <div class="topnav">
         <div class="burger">
+            
             <button class="topicon" onclick="toggleMenu()">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </button>
+
             <div id="Links" class="hidden">
                 <a href="index.html">Home</a>
                 <a href="aboutus.html">About Us</a>
@@ -39,7 +41,10 @@
             <button onclick="toggleCart()">Cart</button>
             <div id="cartItems" class="hidden-reverse">
                 <h3>Your Items</h3>
-                <button id="checkoutbutton">Checkout</button>
+                <div id="checkoutButtonDiv">
+                    <button id="checkoutbutton">Checkout</button>
+                    <!--    <button id="removebutton">Remove</button>  -->
+                </div>
             </div>
         </div>
 
@@ -72,6 +77,24 @@
             x.classList.toggle("slide-in-reverse");
         }
 
+        function addToCart(title, author){
+            var x = document.getElementById("cartItems");
+            var item = document.createElement("div");
+            var checkoutButton = document.getElementById("checkoutButtonDiv");
+            var cartDiv = document.createElement("div"); // Create a new div for cart items
+            x.appendChild(cartDiv); // Append the new div to the cartItems div
+
+            cartDiv.appendChild(item); // Append the item to the new div
+
+
+            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+        }
+                    function removeFromCart(element) {
+                        var parent = element.parentNode;
+                        parent.parentNode.removeChild(parent);
+
+        }
+
         function checkout(){
             //Bring Items in cart to payment screen
         }
@@ -95,7 +118,9 @@
                     <h2>Dune</h2>
                     <h4>By Frank Herbert</h4>
                     <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                    <button onclick="location.href='pay.html'">Add to Cart</button>
+                    <button onclick="addToCart('Dune', 'Frank Herbert')">Add to Cart</button>
+
+
                 </div>
             </div>
         </div>
@@ -113,6 +138,7 @@
                     <h2>On Earth We're Briefly Gorgeous</h2>
                     <h4>By Ocean Vuong</h4>
                     <p></p>
+                    <button onclick="addToCart('On Earth We\'re Briefly Gorgeous', 'Ocean Vuong')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -130,94 +156,13 @@
                     <h2>Across the River and into The Trees</h2>
                     <h4>By Ernest Hemingway</h4>
                     <p></p>
+                    <button onclick="addToCart('Across the River and into The Trees', 'Ernest Hemingway')">Add to Cart</button>
+
                 </div>
             </div>
         </div>
 
-        <div class="card" data-title="Dune" data-author="Frank Herbert">
-            <div class="slide slide1">
-                <div class="content">
-                    <div class="icon">
-                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="content">
-                    <h2>Dune</h2>
-                    <h4>By Frank Herbert</h4>
-                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="card" data-title="Dune" data-author="Frank Herbert">
-            <div class="slide slide1">
-                <div class="content">
-                    <div class="icon">
-                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="content">
-                    <h2>Dune</h2>
-                    <h4>By Frank Herbert</h4>
-                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-title="Dune" data-author="Frank Herbert">
-            <div class="slide slide1">
-                <div class="content">
-                    <div class="icon">
-                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="content">
-                    <h2>Dune</h2>
-                    <h4>By Frank Herbert</h4>
-                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-title="Dune" data-author="Frank Herbert">
-            <div class="slide slide1">
-                <div class="content">
-                    <div class="icon">
-                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="content">
-                    <h2>Dune</h2>
-                    <h4>By Frank Herbert</h4>
-                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-title="Dune" data-author="Frank Herbert">
-            <div class="slide slide1">
-                <div class="content">
-                    <div class="icon">
-                        <img src="images/book1.webp" width="266.666667" height="400" alt="Book Cover">
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="content">
-                    <h2>Dune</h2>
-                    <h4>By Frank Herbert</h4>
-                    <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
-                </div>
-            </div>
-        </div>
 
     </div>
 </html>
