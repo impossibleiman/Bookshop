@@ -77,7 +77,7 @@
             x.classList.toggle("slide-in-reverse");
         }
 
-        function addToCart(title, author){
+        function addToCart(title, author) {
             var x = document.getElementById("cartItems");
             var item = document.createElement("div");
             var checkoutButton = document.getElementById("checkoutButtonDiv");
@@ -86,13 +86,30 @@
 
             cartDiv.appendChild(item); // Append the item to the new div
 
+            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this, \"" + title + "\")'>Remove</button>";
 
-            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+            // Hide the "Add to Cart" button
+            var card = Array.from(document.querySelectorAll('.card')).find(card => card.getAttribute('data-title') === title);
+            if (card) {
+                var addToCartButton = card.querySelector('button');
+                if (addToCartButton) {
+                    addToCartButton.style.display = 'none'; // Hide the button
+                }
+            }
         }
-                    function removeFromCart(element) {
-                        var parent = element.parentNode;
-                        parent.parentNode.removeChild(parent);
 
+        function removeFromCart(element, title) {
+            var parent = element.parentNode;
+            parent.parentNode.removeChild(parent);
+
+            // Show the "Add to Cart" button again
+            var card = Array.from(document.querySelectorAll('.card')).find(card => card.getAttribute('data-title') === title);
+            if (card) {
+                var addToCartButton = card.querySelector('button');
+                if (addToCartButton) {
+                    addToCartButton.style.display = ''; // Show the button again
+                }
+            }
         }
 
         function checkout(){
