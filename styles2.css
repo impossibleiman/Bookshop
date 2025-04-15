@@ -355,6 +355,57 @@ margin: 6px 0;
 
 @media only screen and (max-width:620px){
 
+    .topnav #cartItems{
+        width: 350px;
+    }
+    
+    .topnav #cartItems h3{
+        font-size: 24px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .topnav #cartItems h4{
+        font-size: 18px;
+        color: black;
+        margin-left: 5px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        
+    }
+    
+    .topnav #cartItems h5{
+        font-size: 12px;
+        margin: 0;
+        margin-bottom: 2px;
+        margin-left: 5px;
+        text-wrap: wrap;
+        
+    }
+    
+    .topnav #cartItems #removebutton{
+        position: fixed;
+        background-color: red   ;
+        margin: -40px 0 0 50%;
+        padding: 2px 20px 2px 20px;
+    
+    }
+    
+    .topnav #cartItems #checkoutbutton{
+        position: absolute;
+        left: 30%;
+        bottom: 10%;
+    }
+
+
+
+
+
+
+
+    
+
     /*Search*/
     .topnav .search{
         justify-content: center;
