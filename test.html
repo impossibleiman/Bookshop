@@ -92,7 +92,7 @@
 
             cartDiv.appendChild(item); // Append the item to the new div
 
-            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this, \"" + title + "\")'>Remove</button>";
 
             // Hide the "Add to Cart" button
             var card = Array.from(document.querySelectorAll('.card')).find(card => card.getAttribute('data-title') === title);
@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <div class="card" data-title="On Earth We're Briefly Gorgeous" data-author="Ocean Vuong">
+        <div class="card" data-title="On Earth We\'re Briefly Gorgeous" data-author="Ocean Vuong">
             <div class="slide slide1">
                 <div class="content">
                     <div class="icon">
