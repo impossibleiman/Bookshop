@@ -239,7 +239,7 @@ margin: 6px 0;
 } /*Top Card swipes left animation*/
 
 .container .card:hover .slide.slide1 {
-    transform: translateX(0);
+    transform: translateX(-15%);
 } /*Top Card Animation Start Position*/
 
 .container .card .slide.slide2 {
@@ -258,7 +258,8 @@ margin: 6px 0;
 } /*Bottom Card initalisation and animation*/
 
 .container .card:hover .slide.slide2 {
-    transform: translateY(0);
+    transform: translateY(0);    
+    transform: scale(1.25);
 } /*Bottom Card Animation Start Position*/
 
 .container .card:active .slide.slide2 {
@@ -348,17 +349,55 @@ margin: 6px 0;
 
 
 @media only screen and (max-width:620px){
+
+    /*Search*/
+    .topnav .search{
+        justify-content: center;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        transform: scale(0.9);
+    }
+    
+    .topnav .burger button{
+        border: none;
+        background-color: transparent;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        margin-right: -20px;
+    }
+
+    /*Cart*/
+    .topnav .cart button{
+        margin-top: 12.5%;
+        margin-right: 40px;
+        text-align: center;
+        background-color: #2c73df; /* Updated for better visibility */
+        color: #ffffff; /* Updated for better visibility */
+        border: none;
+        color: white;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+    }
+
+
+    
     .container .card .slide.slide1 {
         margin-top: 8%;
     }
 
     .card{
-        margin-left: 27%;
-        transform: scale(0.9);
+        margin-left: 27.5%;
+        transform: scale(0.7);
     }
 
     .container .card .slide.slide2 {
         transform: translateX(-0);
+        
     }
 
     .container .card .slide.slide1 {
@@ -374,6 +413,17 @@ margin: 6px 0;
     .topnav .search{
         margin-left:0;
     }
+
+    .container .card:hover .slide.slide2 {
+        transform: translateX(0);
+        transform: scale(2);
+        margin-left: -24.5%;
+        
+    } /*Bottom Card Animation for Mobile (touch)*/
+
+    .container .card:hover .slide.slide1 {
+        transform: translateX(-120%);
+    } /*Top Card Animation Start Position*/
 }
 
 @media (min-width: 620px) and (max-width: 1463px) {
@@ -394,4 +444,6 @@ margin: 6px 0;
         margin-left:0;
     }
 
+
+    
 }
