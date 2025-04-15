@@ -288,14 +288,14 @@ margin: 6px 0;
     padding: 3px;
 } /*Arrow on Tab*/
 
-
+/*BLURB*/
 .container .card .slide.slide2 .content p {
-    margin: 0 0 250 0;
+    margin: 0 0 200 0;
     padding: 0;
     color: #ffffff; /* Updated to improve contrast */
 }
 
-
+/*TITLE*/
 .container .card .slide.slide2 .content h2 {
     margin: 0 0 10px 0;
     padding: 0;
@@ -305,7 +305,7 @@ margin: 6px 0;
     color: #ffffff; /* Updated to improve contrast */
 }
 
-
+/*AUTHOR*/
 .container .card .slide.slide2 .content h4 {
     margin: 0 0 20px 0;
     padding: 0;
