@@ -41,15 +41,15 @@
     
     <script>
         function toggleMenu() {
-          var x = document.getElementById("Links");
-          x.classList.toggle("slide-in");
+            var x = document.getElementById("Links");
+            x.classList.toggle("slide-in");
         }
-    
+
         function filterBooks() {
             const input = document.querySelector('input[name="search"]');
             const filter = input.value.toLowerCase();
             const cards = document.querySelectorAll('.card');
-    
+
             cards.forEach(card => {
                 const title = card.getAttribute('data-title').toLowerCase();
                 const author = card.getAttribute('data-author').toLowerCase();
@@ -60,32 +60,45 @@
                 }
             });
         }
-    
+
         function toggleCart() {
             var x = document.getElementById("cartItems");
             x.classList.toggle("slide-in-reverse");
         }
-    
-        function addToCart(title, author){
+
+        function addToCart(title, author) {
             var x = document.getElementById("cartItems");
-            var item = document.createElement("div");
-            var checkoutButton = document.getElementById("checkoutButtonDiv");
-            var cartDiv = document.createElement("div"); // Create a new div for cart items
-            x.appendChild(cartDiv); // Append the new div to the cartItems div
-    
-            cartDiv.appendChild(item); // Append the item to the new div
-    
-    
-            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+            var existingItem = Array.from(x.children).find(item => item.dataset.title === title);
+
+            if (existingItem) {
+                // If the item already exists, increment the counter
+                var counter = existingItem.querySelector('.counter');
+                counter.textContent = parseInt(counter.textContent) + 1;
+            } else {
+                // Create a new cart item
+                var item = document.createElement("div");
+                item.dataset.title = title; // Store the title for reference
+                item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><span class='counter'>1</span><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+                x.appendChild(item);
+            }
         }
-                    function removeFromCart(element) {
-                        var parent = element.parentNode;
-                        parent.parentNode.removeChild(parent);
-    
+
+        function removeFromCart(element) {
+            var parent = element.parentNode;
+            var counter = parent.querySelector('.counter');
+            var count = parseInt(counter.textContent);
+
+            if (count > 1) {
+                // Decrement the counter if more than one
+                counter.textContent = count - 1;
+            } else {
+                // Remove the item if the count is 1
+                parent.parentNode.removeChild(parent);
+            }
         }
-    
-        function checkout(){
-            //Bring Items in cart to payment screen
+
+        function checkout() {
+            // Bring Items in cart to payment screen
         }
     </script>
     
