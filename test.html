@@ -73,7 +73,8 @@
             if (existingItem) {
                 // If the item already exists, increment the counter
                 var counter = existingItem.querySelector('.counter');
-                counter.textContent = parseInt(counter.textContent) + 1;
+                var count = parseInt(counter.textContent.split(': ')[1].trim());
+                counter.textContent = "Quantity: " + (count + 1);
             } else {
                 // Create a new cart item
                 var item = document.createElement("div");
@@ -81,12 +82,12 @@
                 item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><p class='counter'>Quantity: 1</p><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
                 x.appendChild(item);
             }
-        }
+}
 
         function removeFromCart(element) {
             var parent = element.parentNode;
             var counter = parent.querySelector('.counter');
-            var count = parseInt(counter.textContent.split(': ')[1]);
+            var count = parseInt(counter.textContent.split(': ')[1].trim());
 
             if (count > 1) {
                 // Decrement the counter if more than one
