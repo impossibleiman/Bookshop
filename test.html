@@ -12,7 +12,6 @@
 
     <div class="topnav">
         <div class="burger">
-            
             <button class="topicon" onclick="toggleMenu()">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -24,13 +23,12 @@
                 <a href="aboutus.html">About Us</a>
                 <a href="contactus.html">Contact Us</a>
             </div>
-        
         </div>
-        
+
         <div class="title">
             <h1>Bookshop</h1>
         </div>
-        
+
         <div class="search">
             <form oninput="filterBooks()">
                 <input type="text" placeholder="Search by name or author" name="search">
@@ -43,17 +41,15 @@
                 <h3>Your Items</h3>
                 <div id="checkoutButtonDiv">
                     <button id="checkoutbutton">Checkout</button>
-                    <!--    <button id="removebutton">Remove</button>  -->
                 </div>
             </div>
         </div>
-
     </div>
-    
+
     <script>
         function toggleMenu() {
-          var x = document.getElementById("Links");
-          x.classList.toggle("slide-in");
+            var x = document.getElementById("Links");
+            x.classList.toggle("slide-in");
         }
 
         function filterBooks() {
@@ -72,27 +68,22 @@
             });
         }
 
-
-
-        
         function toggleCart() {
             var x = document.getElementById("cartItems");
             x.classList.toggle("slide-in-reverse");
         }
 
-
-
-
         function addToCart(title, author) {
             var x = document.getElementById("cartItems");
             var item = document.createElement("div");
-            var checkoutButton = document.getElementById("checkoutButtonDiv");
             var cartDiv = document.createElement("div"); // Create a new div for cart items
             x.appendChild(cartDiv); // Append the new div to the cartItems div
 
             cartDiv.appendChild(item); // Append the item to the new div
 
-            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this, \"" + title + "\")'>Remove</button>";
+            // Escape the apostrophe in the title for the remove button
+            var escapedTitle = title.replace(/'/g, "\\'");
+            item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><button id='removebutton' onclick='removeFromCart(this, \"" + escapedTitle + "\")'>Remove</button>";
 
             // Hide the "Add to Cart" button
             var card = Array.from(document.querySelectorAll('.card')).find(card => card.getAttribute('data-title') === title);
@@ -118,8 +109,8 @@
             }
         }
 
-        function checkout(){
-            //Bring Items in cart to payment screen
+        function checkout() {
+            // Bring Items in cart to payment screen
         }
     </script>
 
