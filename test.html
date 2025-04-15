@@ -78,7 +78,7 @@
                 // Create a new cart item
                 var item = document.createElement("div");
                 item.dataset.title = title; // Store the title for reference
-                item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><span class='counter'>1</span><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
+                item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><p class='counter'>Quantity: 1</p><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
                 x.appendChild(item);
             }
         }
@@ -86,11 +86,11 @@
         function removeFromCart(element) {
             var parent = element.parentNode;
             var counter = parent.querySelector('.counter');
-            var count = parseInt(counter.textContent);
+            var count = parseInt(counter.textContent.split(': ')[1]);
 
             if (count > 1) {
                 // Decrement the counter if more than one
-                counter.textContent = count - 1;
+                counter.textContent = "Quantity: " + (count - 1);
             } else {
                 // Remove the item if the count is 1
                 parent.parentNode.removeChild(parent);
