@@ -442,6 +442,9 @@ margin: 6px 0;
   background-color: transparent;
 }
 
+#card-number{
+    width: 70%;
+}
 
 #pay-button {
   height: 55px;
