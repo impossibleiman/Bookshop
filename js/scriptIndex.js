@@ -89,9 +89,8 @@ function checkout() {
 
     // Append code and quantity to the query string
     code += bookCode + (quantity < 10 ? '0' + quantity : quantity);
-    // console.log('code is: ' + code);
     }
 
     // Redirect to pay.html with the constructed code
-    // location.href = 'pay.html?code=' + code;
+    location.href = 'pay.html?code=' + code;
 }
