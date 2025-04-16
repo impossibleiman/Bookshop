@@ -351,7 +351,16 @@ margin: 6px 0;
 /**/
 
 
+#topnavPay{
+    justify-content:flex-start;
+}
 
+#titlePay{
+    position: relative;
+    width: 100%;
+    margin-left: 0%;
+    top: 5px;
+}
 
 #cartContainer{
     position: fixed; /* Change to fixed positioning */
@@ -477,6 +486,13 @@ margin: 6px 0;
     } 
 
 
+    #titlePay{
+        display: inline;
+        position: relative;
+        width: 100%;
+        margin-left: 2%;
+        top: 5px;
+    }
 
     
     .topnav #cartItems{
