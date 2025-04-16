@@ -760,6 +760,7 @@ margin: 6px 0;
     .container .card:hover .slide.slide2 {
         transform: translateX(0);
         transform: scale(1.35);
+    }
     
 }
 
