@@ -763,7 +763,24 @@ margin: 6px 0;
     
 }
 
+@media (min-width: 1000px) and (max-width: 1300px) {
+    .modal{
+        position: absolute;
+        top: 50%;
+        width: 90%;
+        left: 75%;        
+ 
+    }
+    
+    #cartContainer{
+        position: absolute;
+        width: 90%;
+        left: 25%;
+        top: 50%;
+        padding-bottom: 2px;
+    }
 
+}
 
 
 
