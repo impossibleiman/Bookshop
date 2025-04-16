@@ -4,85 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/scriptPay.js" defer></script>
     <title>Payment Page</title>
 </head>
 
 <body>
-
-    <script>
-        function populateCart() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get('code');
-            if (code) {
-                const items = code.match(/.{1,4}/g); // Split code into pairs
-                items.forEach(item => {
-                    if(item.slice(0,2) == '01'){
-                        Title = "Dune";
-                        Author = "Frank Herbert";
-                        bookImage = 'book1.webp';                        
-                    }
-                    else if(item.slice(0,2) == '02'){
-                        Title = "On Earth We're Briefly Gorgeous";
-                        Author = "Ocean Vuong";
-                        bookImage = 'book2.jpg';                        
-                    }
-                    else if(item.slice(0,2) == '03'){
-                        Title = "Across the River and into the Trees";
-                        Author = "Ernest Hemingway";
-                        bookImage = 'book3.jpg';                        
-                    }
-                    else if(item.slice(0,2) == '04'){
-                        Title = "Mapping The Interior";
-                        Author = "Stephen Graham Jones";
-                        bookImage = 'book4.jpg';                        
-                    }
-                    Quantity = parseInt(item.slice(2,4));
-                    addToCart(Title, Author, bookImage, Quantity);
-                });
-            }
-        }
-    
-        function addToCart(Title, Author, bookImage, Quantity) {
-            console.log(Title, Author, bookImage, Quantity);
-
-            // Create a new div element for the cart item
-            const cartItem = document.createElement('div');
-            cartItem.className = "Item";
-            
-            const cartItemText = document.createElement('div');
-            cartItemText.className = "ItemText";
-
-            // Set the content of the cart item
-            const cartItemTitle = document.createElement('div');
-            cartItemTitle.textContent = `Title: ${Title}`;
-
-            const cartItemAuthor = document.createElement('div');
-            cartItemAuthor.textContent = `Author: ${Author}`;
-
-            const cartItemImage = document.createElement('img');
-            cartItemImage.setAttribute('src','images/'+bookImage);
-            cartItemImage.style.width = '100px';
-
-            const cartItemQuantity = document.createElement('div');
-            cartItemQuantity.textContent = `Quantity: ${Quantity}`;
-
-            // Append the new cart item to the cart container
-            const cartContainer = document.getElementById('cartContainer');
-            cartContainer.appendChild(cartItem);
-            cartItem.appendChild(cartItemImage);
-            cartItem.appendChild(cartItemText);
-            cartItemText.appendChild(cartItemTitle);
-            cartItemText.appendChild(cartItemAuthor);
-            cartItemText.appendChild(cartItemQuantity);
-
-            
-        }
-
-
-        // Call the function to populate the cart on page load
-        window.onload = populateCart;
-    </script>
 
 
 
