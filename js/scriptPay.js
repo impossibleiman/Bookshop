@@ -1,7 +1,7 @@
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const cardNumber = document.getElementById('card-number').value;
+    const cardNumber = document.getElementById('card-number-input').value;
     const expMonth = document.getElementById('exp-month').value;
     const expYear = document.getElementById('exp-year').value;
     const cvv = document.getElementById('cvv').value;
@@ -34,15 +34,26 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     })
     .then(response => {
         console.log(response.status);
-        if(response.status = 200){
-            window.location.href = 'success.html';
+        // Use === for comparison
+        if (response.status === 200) {
+            const digits = cardNumber.slice(12, 16);
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            const code2 = digits.concat(code);
+            window.location.href = 'success.html?code=' + code2;
+        } else {
+            // Handle error response
+            console.error('Error: ', response.status);
+            // Optionally, you can display an error message to the user
         }
-        //window.Location.href = 'success.html';
-        
     })
+    .catch(error => {
+        console.error('Network error: ', error);
+        // Optionally, handle network errors
+    });
 })
 
-document.getElementById('card-number').addEventListener('input', function (evt) {
+document.getElementById('card-number-input').addEventListener('input', function (evt) {
     const cardNumber = evt.target.value;
     let cardImageID = ''; // Initialize cardImageID
 

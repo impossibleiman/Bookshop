@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Payment Success</title>
+    <script src="js/scriptSuccess.js" defer></script>
+    <title>Payment Success!</title>
 </head>
 <body>
-    <h1>Payment Successful!</h1>
-    <p>Thank you for your payment.</p>
-    <p>Your card number ending in: **** **** **** 1234</p>
+
+
+        <div class="topnav" id="topnavPay">
+            <div class="burger">
+                
+                <button class="topicon" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </button>
+        
+                <div id="Links" class="hidden">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="contactus.html">Contact Us</a>
+                </div>
+            
+            </div>
+            
+            <div class="title" id="masterTitle">
+                <h1>Bookshop</h1>
+            </div>
+            
+        
+        
+        </div>
+
+    <div class="thankYou">
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your payment.</p>
+        <p id="card-number">Your card number ending in: **** **** **** </p>
+    </div>
+
+    <div id="cartContainerSuccess">
+        <h1>Your Items</h1>
+    </div>
+
+
 </body>
 </html>

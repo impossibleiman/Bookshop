@@ -355,7 +355,7 @@ margin: 6px 0;
     justify-content:flex-start;
 }
 
-#titlePay{
+#masterTitle{
     position: relative;
     width: 100%;
     margin-left: 0%;
@@ -451,7 +451,7 @@ margin: 6px 0;
   background-color: transparent;
 }
 
-#card-number{
+#card-number-input{
     width: 70%;
 }
 
@@ -480,6 +480,38 @@ margin: 6px 0;
 
 
 
+/*===============*/
+/* Success Page  */
+/*==============*/
+
+
+.thankYou{
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#cartContainerSuccess{
+    position: fixed; /* Change to fixed positioning */
+    top: 50%; /* Center vertically */
+    left: 70%; 
+    width: 500px;
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    height: fit-content;
+    background: #4e4c4c;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    min-width: 220px;
+    max-width: 500px;
+}
+
+#cartContainerSuccess h1{
+    margin-left:5%;
+}
+
 
 @media only screen and (max-width:620px){
     .container .card .slide.slide2 .content button {
@@ -492,7 +524,7 @@ margin: 6px 0;
     } 
 
 
-    #titlePay{
+    #masterTitle{
         display: inline;
         position: relative;
         width: 100%;
@@ -645,6 +677,43 @@ margin: 6px 0;
     }
 
 
+
+
+
+}
+
+
+@media(max-width: 1000px){
+    #cartContainerSuccess{
+        position: fixed;
+        width:100%;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+.thankYou {
+    position: fixed;
+    width: 100%;
+    top: 30%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    background-color: rgba(78, 76, 76, 0.9); /* Semi-transparent background */
+    color: #ffffff; /* White text color */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.thankYou h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 36px; /* Font size for the heading */
+}
+
+.thankYou p {
+    margin: 5px 0; /* Margin for paragraphs */
+    font-size: 18px; /* Font size for the paragraphs */
+}
 
 
 
