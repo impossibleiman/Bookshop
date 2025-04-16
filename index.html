@@ -1,46 +1,49 @@
-    <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Bookshop</title> <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" /> <script src="js/scriptIndex.js" defer></script> </head> <body>
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Bookshop</title> 
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" /> 
+    <script src="js/scriptIndex.js" defer></script> 
+</head> 
+
+<body>
     <div class="topnav">
         <div class="burger">
-            
             <button class="topicon" onclick="toggleMenu()">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </button>
-    
             <div id="Links" class="hidden">
                 <a href="index.html">Home</a>
                 <a href="aboutus.html">About Us</a>
                 <a href="contactus.html">Contact Us</a>
             </div>
-        
         </div>
-        
         <div class="title">
             <h1>Bookshop</h1>
         </div>
-        
         <div class="search">
             <form oninput="filterBooks()">
                 <input type="text" placeholder="Search by name or author" name="search">
             </form>
         </div>
-    
         <div class="cart">
             <button onclick="toggleCart()">Cart</button>
             <div id="cartItems" class="hidden-reverse">
                 <h3>Your Items</h3>
                 <div id="checkoutButtonDiv">
-<button id="checkoutbutton" onclick="checkout()">Checkout</button>
+                    <button id="checkoutbutton" onclick="checkout()">Checkout</button>
                 </div>
             </div>
         </div>
-    
     </div>
 
-    
     <div class="container">
-    
+
         <div class="card" data-title="Dune" data-author="Frank Herbert">
             <div class="slide slide1">
                 <div class="content">
@@ -58,8 +61,6 @@
                     <h4>By Frank Herbert</h4>
                     <p>Paul Atreides, heir to House Atreides, finds himself thrust into a dangerous political game on the desert planet Arrakis, the only source of the valuable spice melange, essential for interstellar travel and extended life, when his family is betrayed and he must survive and fulfill his destiny as a messianic leader.</p>
                     <button onclick="addToCart('Dune', 'Frank Herbert')">Add to Cart</button>
-    
-    
                 </div>
             </div>
         </div>
@@ -102,7 +103,6 @@
                     <h4>By Ernest Hemingway</h4>
                     <p>Richard Cantwell, a weary American colonel in post-World War II Italy, grapples with his fading memories and the scars of war as he reflects on his life and lost love. Amidst the backdrop of the beautiful Venetian landscape, he embarks on a poignant journey of self-discovery, confronting themes of mortality, love, and the passage of time while seeking solace in the fleeting moments of connection and beauty.</p>
                     <button onclick="addToCart('Across the River and into The Trees', 'Ernest Hemingway')">Add to Cart</button>
-    
                 </div>
             </div>
         </div>
@@ -124,10 +124,8 @@
                     <h4>By Stephen Graham Jones</h4>
                     <p>Jack, a young Native American boy, grapples with the haunting memories of his deceased father as he navigates the complexities of his family's past in a home filled with unsettling visions. When the boundaries between reality and the supernatural begin to blur, Jack must confront the weight of his heritage and the grief that shapes his identity, ultimately embarking on a journey of self-discovery that reveals the profound impact of history on his present life.</p>
                     <button onclick="addToCart('Mapping The Interior', 'Stephen Graham Jones')">Add to Cart</button>
-    
                 </div>
             </div>
         </div>
-    
     
     </div>
