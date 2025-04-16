@@ -33,7 +33,6 @@ document.getElementById('payment-form').addEventListener('submit', function(even
         body: JSON.stringify(data)
     })
     .then(response => {
-        console.log(response.status);
         // Use === for comparison
         if (response.status === 200) {
             const digits = cardNumber.slice(12, 16);
@@ -43,12 +42,12 @@ document.getElementById('payment-form').addEventListener('submit', function(even
             window.location.href = 'success.html?code=' + code2;
         } else {
             // Handle error response
-            console.error('Error: ', response.status);
+            document.getElementById('message').innerText = 'Error: ' + response.status + ' (Bad Request)';
             // Optionally, you can display an error message to the user
         }
     })
     .catch(error => {
-        console.error('Network error: ', error);
+        document.getElementById('message').innerText = 'Network Error: ' + response.status + ' (Bad Request)';
         // Optionally, handle network errors
     });
 })

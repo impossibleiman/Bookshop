@@ -524,7 +524,7 @@ margin: 6px 0;
     .thankYou {
         position: fixed;
         width: 100%;
-        top: 30%; /* Center vertically */
+        top: 20%; /* Center vertically */
         left: 50%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Adjust to center */
         background-color: rgba(78, 76, 76, 0.9); /* Semi-transparent background */
