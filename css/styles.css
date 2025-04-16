@@ -455,6 +455,12 @@ margin: 6px 0;
     width: 70%;
 }
 
+.cardImage{
+    position: fixed;
+    right: 10%;
+    top: 23.5%;
+}
+
 #pay-button {
   height: 55px;
   background: #F2F2F2;
@@ -641,6 +647,15 @@ margin: 6px 0;
 
 
 
+
+}
+
+@media(max-width: 550px){
+        .cardImage{
+        position: fixed;
+        right: 5%;
+        top: 28%;
+    }
 }
 
 @media (min-width: 620px) and (max-width: 1463px) {

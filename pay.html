@@ -45,7 +45,7 @@
         <form id="payment-form">
             <h1>Enter Your Credit Card Details</h1>
             
-            <div class="input-container">
+            <div class="input-container" id="card-number-box">
                 <label class="input-label" for="card-number">Card Number:</label>
                 <input class="input-field" type="text" id="card-number" required placeholder="0000 0000 0000 0000">
             </div>
@@ -64,10 +64,10 @@
                 <label class="input-label" for="cvv">CVV:</label>
                 <input class="input-field" type="text" id="cvv" required placeholder="123">
             </div>
-
+            <div id="message"></div>
             <button id="pay-button" type="submit">Continue</button>
         </form>
-        <div id="message"></div>
+        
     </div>
 </body>
 </html>

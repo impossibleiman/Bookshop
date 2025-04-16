@@ -42,7 +42,38 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     })
 })
 
+document.getElementById('card-number').addEventListener('input', function (evt) {
+    const cardNumber = evt.target.value;
+    let cardImageID = ''; // Initialize cardImageID
 
+    // Check the card number prefix and set the cardImageID accordingly
+    const MasterCardNumbers = ['51', '52', '53', '54', '55']
+    if (MasterCardNumbers.includes(cardNumber.slice(0, 2))) {
+        cardImageID = 'mastercard.png';
+    } else {
+        // Optionally handle other card types or set a default image
+        cardImageID = ''; // Reset or set to a default image if needed
+    }
+
+    // Clear previous images
+    const cardNumberBox = document.getElementById('card-number-box');
+    
+    // Remove only image elements
+    const existingImages = cardNumberBox.getElementsByTagName('img');
+    while (existingImages.length > 0) {
+        existingImages[0].parentNode.removeChild(existingImages[0]);
+    }
+
+    // Only create and append the image if cardImageID is set
+    if (cardImageID) {
+        const cardImage = document.createElement('img');
+        cardImage.setAttribute('src', 'images/' + cardImageID);
+        cardImage.style.width = '80px';
+        cardImage.style.height = '50px';
+        cardImage.className = "cardImage";
+        cardNumberBox.appendChild(cardImage);
+    }
+});
 
 
 
@@ -81,7 +112,6 @@ function populateCart() {
 }
 
 function addToCart(Title, Author, bookImage, Quantity) {
-    console.log(Title, Author, bookImage, Quantity);
 
     // Create a new div element for the cart item
     const cartItem = document.createElement('div');
