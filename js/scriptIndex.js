@@ -61,37 +61,37 @@ function removeFromCart(element) {
 }
 
 function checkout() {
-var cartItems = document.getElementById("cartItems");
-if (cartItems.children.length === 0) {
-alert("Your cart is empty!");
-return;
-}
-var items = cartItems.children;
-var code = '';
+    var cartItems = document.getElementById("cartItems");
+    if (cartItems.children.length - 2 === 0) {
+    alert("Your cart is empty!");
+    return;
+    }
+    var items = cartItems.children;
+    var code = '';
 
-for (var i = 2; i < items.length; i++) {
-var item = items[i];
-var title = item.dataset.title;
-var counterElement = item.querySelector('.counter');
-var quantity = counterElement ? parseInt(counterElement.textContent.split(': ')[1].trim()) : 0;
+    for (var i = 2; i < items.length; i++) {
+    var item = items[i];
+    var title = item.dataset.title;
+    var counterElement = item.querySelector('.counter');
+    var quantity = counterElement ? parseInt(counterElement.textContent.split(': ')[1].trim()) : 0;
 
-// Map titles to codes
-var bookCode = '';
-if (title === 'Dune') {
-    bookCode = '01';
-} else if (title === 'On Earth We\'re Briefly Gorgeous') {
-    bookCode = '02';
-} else if (title === 'Across the River and into The Trees') {
-    bookCode = '03';
-} else if (title === 'Mapping The Interior') {
-    bookCode = '04';
-}
+    // Map titles to codes
+    var bookCode = '';
+    if (title === 'Dune') {
+        bookCode = '01';
+    } else if (title === 'On Earth We\'re Briefly Gorgeous') {
+        bookCode = '02';
+    } else if (title === 'Across the River and into The Trees') {
+        bookCode = '03';
+    } else if (title === 'Mapping The Interior') {
+        bookCode = '04';
+    }
 
-// Append code and quantity to the query string
-code += bookCode + (quantity < 10 ? '0' + quantity : quantity);
-// console.log('code is: ' + code);
-}
+    // Append code and quantity to the query string
+    code += bookCode + (quantity < 10 ? '0' + quantity : quantity);
+    // console.log('code is: ' + code);
+    }
 
-// Redirect to pay.html with the constructed code
-location.href = 'pay.html?code=' + code;
+    // Redirect to pay.html with the constructed code
+    // location.href = 'pay.html?code=' + code;
 }
