@@ -512,6 +512,67 @@ margin: 6px 0;
     margin-left:5%;
 }
 
+@media(max-width: 1000px){
+    #cartContainerSuccess{
+        position: fixed;
+        width:100%;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .thankYou {
+        position: fixed;
+        width: 100%;
+        top: 30%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust to center */
+        background-color: rgba(78, 76, 76, 0.9); /* Semi-transparent background */
+        color: #ffffff; /* White text color */
+        text-align: center; /* Center text */
+        padding: 20px; /* Padding around the content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    }
+    
+    .thankYou h1 {
+        margin: 0; /* Remove default margin */
+        font-size: 36px; /* Font size for the heading */
+    }
+    
+    .thankYou p {
+        margin: 5px 0; /* Margin for paragraphs */
+        font-size: 18px; /* Font size for the paragraphs */
+    }
+
+     #cartContainer{
+        position: relative;
+        width: 100%;
+        left: 50%;
+        right: 0;
+        top: 425px;
+        bottom: 20%;
+        max-width:100%;
+        padding-bottom: 2%;
+    }
+
+    #cartContainer h1{
+        padding-top:2%;
+    }
+    
+    .modal{
+        position: relative;
+        top: 375px;
+        bottom:0;
+        width: 100%;
+        left: 50%;
+        max-width:100%;
+ 
+    }
+    
+
+
+}
 
 @media only screen and (max-width:620px){
     .container .card .slide.slide2 .content button {
@@ -657,24 +718,7 @@ margin: 6px 0;
 
 
     
-    .modal{
-        position: absolute;
-        top: 850px;
-        width: 90%;
-        left: 50%;        
- 
-    }
-    
-    #cartContainer{
-        position: absolute;
-        transform: scale(0.75);
-        width: 120%;
-        left: -10%;
-        right: 0;
-        top: -90px;
-        padding-bottom: 2px;
-        max-width: 500%;
-    }
+
 
 
 
@@ -683,41 +727,7 @@ margin: 6px 0;
 }
 
 
-@media(max-width: 1000px){
-    #cartContainerSuccess{
-        position: fixed;
-        width:100%;
-        left:50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-.thankYou {
-    position: fixed;
-    width: 100%;
-    top: 30%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to center */
-    background-color: rgba(78, 76, 76, 0.9); /* Semi-transparent background */
-    color: #ffffff; /* White text color */
-    text-align: center; /* Center text */
-    padding: 20px; /* Padding around the content */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-}
 
-.thankYou h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 36px; /* Font size for the heading */
-}
-
-.thankYou p {
-    margin: 5px 0; /* Margin for paragraphs */
-    font-size: 18px; /* Font size for the paragraphs */
-}
-
-
-
-}
 
 @media(max-width: 550px){
         .cardImage{
@@ -745,21 +755,7 @@ margin: 6px 0;
         margin-left:0;
     }
 
-    .modal{
-        position: absolute;
-        top: 125%;
-        width: 90%;
-        left: 50%;        
- 
-    }
-    
-    #cartContainer{
-        position: absolute;
-        width: 90%;
-        left: 50%;
-        top: 45%;
-        padding-bottom: 2px;
-    }
+
     
 }
 
@@ -781,6 +777,7 @@ margin: 6px 0;
     }
 
 }
+
 
 
 
