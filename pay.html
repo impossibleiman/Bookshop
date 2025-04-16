@@ -9,33 +9,23 @@
 </head>
 
 <body>
-
     <div class="topnav" id="topnavPay">
         <div class="burger">
-            
             <button class="topicon" onclick="toggleMenu()">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </button>
-    
             <div id="Links" class="hidden">
                 <a href="index.html">Home</a>
                 <a href="aboutus.html">About Us</a>
                 <a href="contactus.html">Contact Us</a>
             </div>
-        
         </div>
-        
         <div class="title" id="masterTitle">
             <h1>Bookshop</h1>
         </div>
-        
-    
-    
     </div>
-
-
 
     <div id="cartContainer">
         <h1>Your Items</h1>
@@ -44,22 +34,18 @@
     <div class="modal">
         <form id="payment-form">
             <h1>Enter Your Credit Card Details</h1>
-            
             <div class="input-container" id="card-number-box">
                 <label class="input-label" for="card-number-input">Card Number:</label>
                 <input class="input-field" type="text" id="card-number-input" required placeholder="0000 0000 0000 0000">
             </div>
-
             <div class="input-container">
                 <label class="input-label" for="exp-month">Expiration Month:</label>
                 <input class="input-field" type="text" id="exp-month" required placeholder="MM">
             </div>
-            
             <div class="input-container">
                 <label class="input-label" for="exp-year">Expiration Year:</label>
                 <input class="input-field" type="text" id="exp-year" required placeholder="YYYY">
             </div>
-
             <div class="input-container">
                 <label class="input-label" for="cvv">CVV:</label>
                 <input class="input-field" type="text" id="cvv" required placeholder="123">
@@ -67,7 +53,7 @@
             <div id="message"></div>
             <button id="pay-button" type="submit">Continue</button>
         </form>
-        
     </div>
+    
 </body>
 </html>
