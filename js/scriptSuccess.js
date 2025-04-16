@@ -18,7 +18,6 @@
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
             const code2 = code.slice(4);
-            console.log(code2);
             if (code2) {
                 const items = code2.match(/.{1,4}/g); // Split code into pairs
                 items.forEach(item => {
