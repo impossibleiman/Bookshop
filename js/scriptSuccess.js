@@ -8,12 +8,6 @@ if (code) {
     cardNumberElement.textContent += code.slice(0, 4); // Append the digits to the existing text
 }
 
-/*MASTER FUNCTION/SCRIPT*/
-function toggleMenu() {
-    var x = document.getElementById("Links");
-    x.classList.toggle("slide-in");
-}
-
 function populateCart() {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');

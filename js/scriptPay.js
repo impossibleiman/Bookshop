@@ -111,19 +111,5 @@ function addToCart(Title, Author, bookImage, Quantity) {
     cartItem.appendChild(cartItemText);
 }
 
-
-
-
-/*MAKE A MASTER SCRIPT / FUNCTION*/
-function toggleMenu() {
-
-    var x = document.getElementById("Links");
-
-    x.classList.toggle("slide-in");
-
-}
-
-
-
 // Call the function to populate the cart on page load
 window.onload = populateCart;

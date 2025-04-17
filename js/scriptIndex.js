@@ -1,9 +1,3 @@
-/*MASTER FUNCTION / SCRIPT*/
-function toggleMenu() {
-    var x = document.getElementById("Links");
-    x.classList.toggle("slide-in");
-}
-
 function toggleCart() {
     var x = document.getElementById("cartItems");
 
