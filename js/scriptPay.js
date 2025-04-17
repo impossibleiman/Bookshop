@@ -1,7 +1,7 @@
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const cardNumber = document.getElementById('card-number-input').value;
+    const cardNumber = document.getElementById('card-number-input').value.replace(/\s+/g, '');
     const expMonth = document.getElementById('exp-month').value;
     const expYear = document.getElementById('exp-year').value;
     const cvv = document.getElementById('cvv').value;
