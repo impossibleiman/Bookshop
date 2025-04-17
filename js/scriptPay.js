@@ -6,11 +6,34 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     const expYear = document.getElementById('exp-year').value;
     const cvv = document.getElementById('cvv').value;
 
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() + 1; // 0-11
+    const currentYear = currentDate.getFullYear();
+
+
     // Validation checks
     if (cardNumber.length !== 16 || !/^(51|52|53|54|55)/.test(cardNumber)) {
         document.getElementById('message').innerText = 'Invalid card number.';
         return;
     }
+
+    if (!/^(1[0-2]|[1-9])$/.test(expMonth)) {
+        document.getElementById('message').innerText = 'Invalid expiration month.';
+        return;
+    }
+
+    if (!/^\d{4}$/.test(expYear) || parseInt(expYear) < currentYear) {
+        document.getElementById('message').innerText = 'Invalid expiration year.';
+        return;
+    }
+
+    if (parseInt(expYear) < currentYear || 
+    (parseInt(expYear) === currentYear && expMonth < currentMonth)) {
+    document.getElementById('message').innerText = 'Card has expired.';
+    return;
+}
+
+
     if (cvv.length < 3 || cvv.length > 4) {
         document.getElementById('message').innerText = 'Invalid CVV.';
         return;
