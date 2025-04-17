@@ -11,6 +11,7 @@ function filterBooks() {
     cards.forEach(card => {
         const title = card.getAttribute('data-title').toLowerCase();
         const author = card.getAttribute('data-author').toLowerCase();
+
         if (title.includes(filter) || author.includes(filter)) {
             card.style.display = ""; // Show matching card
         } else {
@@ -21,6 +22,7 @@ function filterBooks() {
 
 function toggleCart() {
     var x = document.getElementById("cartItems");
+
     x.classList.toggle("slide-in-reverse");
 }
 
@@ -32,6 +34,7 @@ function addToCart(title, author) {
         // If the item already exists, increment the counter
         var counter = existingItem.querySelector('.counter');
         var count = parseInt(counter.textContent.split(': ')[1].trim());
+
         if (count < 10) {
             counter.textContent = "Quantity: " + (count + 1);
         } else {
@@ -40,6 +43,7 @@ function addToCart(title, author) {
     } else {
         // Create a new cart item
         var item = document.createElement("div");
+
         item.dataset.title = title; // Store the title for reference
         item.innerHTML = "<h4>Book Title: </h4><h5>" + title + "</h5><h4>Author: </h4><h5>" + author + "</h5><p class='counter'>Quantity: 1</p><button id='removebutton' onclick='removeFromCart(this)'>Remove</button>";
         x.appendChild(item);
@@ -62,6 +66,7 @@ function removeFromCart(element) {
 
 function checkout() {
     var cartItems = document.getElementById("cartItems");
+
     if (cartItems.children.length - 2 === 0) {
     alert("Your cart is empty!");
     return;
@@ -77,6 +82,7 @@ function checkout() {
 
     // Map titles to codes
     var bookCode = '';
+
     if (title === 'Dune') {
         bookCode = '01';
     } else if (title === 'On Earth We\'re Briefly Gorgeous') {
@@ -86,11 +92,9 @@ function checkout() {
     } else if (title === 'Mapping The Interior') {
         bookCode = '04';
     }
-
     // Append code and quantity to the query string
     code += bookCode + (quantity < 10 ? '0' + quantity : quantity);
     }
-
     // Redirect to pay.html with the constructed code
     location.href = 'pay.html?code=' + code;
 }
