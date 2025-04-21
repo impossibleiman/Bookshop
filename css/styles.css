@@ -1,11 +1,23 @@
-body {
+/* =============== ------ =============== */
+/* =============== MASTER =============== */
+/* =============== ------ =============== */
+
+body{
     background-color: #121212; /* Dark background */
     color: #ffffff; /* Light text color */
     font-family: Arial, sans-serif;
 }
 
-h1 {
+h1{
     margin-top: 10px;
+}
+
+button{
+    background-color: #2c73df;
+}
+
+button:hover{
+    background-color: #1a1a1a;
 }
 
 /* NAVIGATION */
@@ -71,6 +83,22 @@ h1 {
     margin-left: -20%;
 }
 
+#masterTitle {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    top: 5px;
+}
+
+/* =============== ------ =============== */
+/* =============== INDEX ================ */
+/* =============== ------ =============== */
+
+
+    /**/
+/*Navigation*/
+    /**/
+
 /* Search */
 .topnav .search {
     justify-content: center;
@@ -102,7 +130,6 @@ h1 {
     margin-top: 10%;
     margin-right: 40px;
     text-align: center;
-    background-color: #2c73df;
     color: #ffffff;
     border: none;
     padding: 12px 24px;
@@ -162,16 +189,9 @@ h1 {
 
 
 
-
-
-
-
-
-
-
-
-
+    /**/
 /* CARDS */
+    /**/
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -291,27 +311,27 @@ h1 {
 
 .container .card .slide.slide2 .content button {
     text-align: center;
-    background-color: #2c73df;
     color: #ffffff;
     border: none;
     padding: 15px 32px;
     font-size: 16px;
 }
 
-.container .card .slide.slide2 .content button:hover {
-    background-color: #1a1a1a;
-}
 
-/* PAY SCREEN */
+
+
+
+
+
+
+
+
+
+/* =============== ------ =============== */
+/* =============== PAY ================== */
+/* =============== ------ =============== */
 #topnavPay {
     justify-content: flex-start;
-}
-
-#masterTitle {
-    position: relative;
-    width: 100%;
-    margin-left: 0;
-    top: 5px;
 }
 
 #cartContainer {
@@ -419,7 +439,6 @@ h1 {
 
 #pay-button {
     height: 55px;
-    background-color: #2c73df;
     border-radius: 11px;
     border: 0;
     outline: none;
@@ -430,7 +449,12 @@ h1 {
     transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
-/* Success Page */
+
+
+
+/* =============== ------ =============== */
+/* =============== SUCCESS ================ */
+/* =============== ------ =============== */
 .thankYou {
     position: fixed;
     width: 100%;
@@ -460,8 +484,96 @@ h1 {
     margin-left: 5%;
 }
 
-/* Responsive */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                  ==============                   */
+
+
+/*                  ==============                   */
+/*                  Responsiveness                   */
+/*                  ==============                   */
+
+/*                  ==============                   */
+
+
+
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+    /* ===== ------ ===== */
+    /* ===== PAY ====== */
+    /* ===== ------ ===== */
+    .modal {
+        position: absolute;
+        top: 50%;
+        width: 90%;
+        left: 75%;
+    }
+
+    #cartContainer {
+        position: absolute;
+        width: 90%;
+        left: 24%;
+        top: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 2px;
+    }
+/*These two changes prevent both the modal and cart container from overlapping each other*/
+
+}
+
+
+
+
+
+
 @media (max-width: 1000px) {
+    /* ===== ------ ===== */
+    /* ===== PAY ======== */
+    /* ===== ------ ===== */
+   
+    #cartContainer {
+        top: 70px;
+        position: relative;
+        width: 100%;
+        left: 50%;
+        right: 0;
+        transform: translate(-50%, 0%);
+        max-width: 100%;
+        padding-bottom: 2%;
+    }
+
+    #cartContainer h1 {
+        padding-top: 2%;
+    }
+
+    .modal {
+        position: relative;
+        top: 350px;
+        bottom: 0;
+        width: 100%;
+        left: 50%;
+        max-width: 100%;
+    }
+
+    /*Places the cartContainer underneath the modal as opposed to side by side*/
+
+
+    /* ===== ------ ===== */
+    /* ===== SUCCESS ==== */
+    /* ===== ------ ===== */
+
     #cartContainerSuccess {
         position: relative;
         width: 100%;
@@ -471,6 +583,7 @@ h1 {
         padding-bottom: 5px;
         transform: translate(-50%, -50%);
     }
+    /*Brings container to middle of screen instead of to the side*/
 
     .thankYou {
         position: relative;
@@ -495,40 +608,17 @@ h1 {
         margin: 5px 0;
         font-size: 18px;
     }
-
-    #cartContainer {
-        position: relative;
-        width: 100%;
-        left: 50%;
-        right: 0;
-    transform: translate(-50%, 0%);
-    max-width: 100%;
-        padding-bottom: 2%;
-    }
-
-    #cartContainer h1 {
-        padding-top: 2%;
-    }
-
-    .modal {
-        position: relative;
-        top: 250px;
-        bottom: 0;
-        width: 100%;
-        left: 50%;
-        max-width: 100%;
-    }
+    /*Places the thank you message in the top middle of the screen*/
 }
 
-@media only screen and (max-width: 620px) {
-    .container .card .slide.slide2 .content button {
-        transition: 0.8s;
-        transform: scale(0);
-    }
 
-    .container .card:hover .slide.slide2 .content button {
-        transform: scale(1);
-    }
+
+
+
+@media only screen and (max-width: 620px) {
+    /* ===== ------ ===== */
+    /* ===== MASTER ===== */
+    /* ===== ------ ===== */
 
     #masterTitle {
         display: inline;
@@ -537,7 +627,15 @@ h1 {
         margin-left: 2%;
         top: 5px;
     }
+    /*Move 'Bookshop' Title just to the right of the burger icon*/
 
+    /* ===== ------ ===== */
+    /* ===== INDEX ====== */
+    /* ===== ------ ===== */
+    
+           /**/
+        /* Navigation */
+                 /**/
     .topnav #cartItems {
         width: 350px;
     }
@@ -549,19 +647,18 @@ h1 {
 
     .topnav #cartItems h4 {
         font-size: 18px;
-        color: black;
         margin: 0 0 0 5px;
     }
 
     .topnav #cartItems h5 {
-        font-size: 12px;
+        max-width: 200px;
+        font-size: 14px;
         margin: 0 0 2px 5px;
         text-wrap: wrap;
     }
 
     .topnav #cartItems #removebutton {
         position: fixed;
-        background-color: red;
         margin: -40px 0 0 50%;
         padding: 2px 20px;
     }
@@ -572,7 +669,9 @@ h1 {
         bottom: 10%;
     }
 
-    /* Search */
+           /**/
+        /* Search */
+             /**/
     .topnav .search {
         justify-content: center;
         text-align: center;
@@ -590,12 +689,13 @@ h1 {
         margin-right: -20px;
     }
 
-    /* Cart */
+            /**/
+        /*  Cart */
+            /**/
     .topnav .cart button {
         margin-top: 12.5%;
         margin-right: 40px;
         text-align: center;
-        background-color: #2c73df;
         color: #ffffff;
         border: none;
         padding: 10px 20px;
@@ -603,6 +703,9 @@ h1 {
         display: inline-block;
     }
 
+            /**/
+        /*  Cards */
+             /**/
     .container .card .slide.slide1 {
         margin-top: 8%;
     }
@@ -630,7 +733,6 @@ h1 {
     }
 
     .container .card:hover .slide.slide2 {
-        transform: translateX(0);
         transform: scale(2);
         margin-left: -24.5%;
     }
@@ -638,17 +740,36 @@ h1 {
     .container .card:hover .slide.slide1 {
         transform: translateX(-120%);
     }
+
+    .container .card .slide.slide2 .content button {
+        transition: 0.8s;
+        transform: scale(0);
+    }
+
+    .container .card:hover .slide.slide2 .content button {
+        transform: scale(1);
+    }
+
 }
 
-@media (max-width: 550px) {
-    .cardImage {
-        position: fixed;
-        right: 5%;
-        top: 28%;
-    }
-}
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 620px) and (max-width: 1463px) {
+    /* ===== ------ ===== */
+    /* ===== INDEX ====== */
+    /* ===== ------ ===== */
+
+            /**/
+        /*  Cards */
+             /**/   
     .container .card .slide.slide1 {
         margin-top: 15%;
     }
@@ -666,25 +787,52 @@ h1 {
     }
 
     .container .card:hover .slide.slide2 {
-        transform: translateX(0);
         transform: scale(1.35);
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1300px) {
-    .modal {
-        position: absolute;
-        top: 50%;
-        width: 90%;
-        left: 75%;
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+    /* ===== ------ ===== */
+    /* ===== INDEX ====== */
+    /* ===== ------ ===== */
+
+            /**/
+        /*  Cards */
+             /**/  
+    .cardImage {
+        position: fixed;
+        right: 5%;
+        top: 28%;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    /* ===== ------ ===== */
+    /* ===== INDEX ====== */
+    /* ===== ------ ===== */
+
+            /**/
+        /*  Navigation */
+                  /**/  
+    .slide-in-reverse {
+        transform: translateX(-50%);
+    }
+    .topnav #cartItems {
+        width: 250px;
+        right:auto;
     }
 
-    #cartContainer {
-        position: absolute;
-        width: 90%;
-        left: 25%;
-        top: 50%;
-    transform: translate(-50%, -50%);
-    padding-bottom: 2px;
+    .topnav #cartItems #removebutton {
+        margin: -40px 0 0 40%;
     }
 }
