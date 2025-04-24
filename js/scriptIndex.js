@@ -63,9 +63,10 @@ function removeFromCart(element) {
 }
 
 function checkout() {
+        //UPDATE - since adding a separate div for cart items, it has removed the random 2 children bug however the comments will be kept to show progression
     var cartItems = document.getElementById("cartItemsDiv");
 
-    if (cartItems.children.length - 2 === 0) { //For some reason the cart items have 2 random children, this is a partial solution 
+    if (cartItems.children.length === 0) { //For some reason the cart items have 2 random children, this is a partial solution (IGNORE COMMENT)
         alert("Your cart is empty!");
         return;
     }
@@ -79,7 +80,7 @@ function checkout() {
         'Mapping The Interior': '04'
     }; //Assign each book a code so that can pass on information to the following page
 
-    for (var i = 2; i < items.length; i++) { //Again using the same partial solution due to random 2 children //Looping through cart items
+    for (var i = 0; i < items.length; i++) { //Again using the same partial solution due to random 2 children (IGNORE COMMENT) //Looping through cart items
         var item = items[i];
         var title = item.dataset.title;
         var counterElement = item.querySelector('.counter');
