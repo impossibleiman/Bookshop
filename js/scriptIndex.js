@@ -63,7 +63,7 @@ function removeFromCart(element) {
 }
 
 function checkout() {
-    var cartItems = document.getElementById("cartItems");
+    var cartItems = document.getElementById("cartItemsDiv");
 
     if (cartItems.children.length - 2 === 0) { //For some reason the cart items have 2 random children, this is a partial solution 
         alert("Your cart is empty!");

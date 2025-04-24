@@ -1,40 +1,48 @@
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const cardNumber = document.getElementById('card-number-input').value.replace(/\s+/g, '');
+    const cardNumber = document.getElementById('card-number-input').value.replace(/\s+/g, ''); //Remove spaces from input (accessibility)
     const expMonth = document.getElementById('exp-month').value;
     const expYear = document.getElementById('exp-year').value;
     const cvv = document.getElementById('cvv').value;
+    //Get input values from form
 
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth() + 1; // 0-11
     const currentYear = currentDate.getFullYear();
-
+    //Get current date to check if card is valid
 
     // Validation checks
-    if (cardNumber.length !== 16 || !/^(51|52|53|54|55)/.test(cardNumber)) {
+    if (cardNumber.length !== 16 || !/^(51|52|53|54|55)/.test(cardNumber)) { 
+        //Check whether card is of length (16) and starts with the following values
         document.getElementById('message').innerText = 'Invalid card number.';
         return;
     }
 
     if (!/^(1[0-2]|[1-9])$/.test(expMonth)) {
+        //Check to see if the month is between
+            //1[0-2] = 10, 11, 12
+            //[1-9] = 1,2, ... ,8,9
         document.getElementById('message').innerText = 'Invalid expiration month.';
         return;
     }
 
     if (!/^\d{4}$/.test(expYear) || parseInt(expYear) < currentYear) {
+        //Check to see if year is 4 digits
         document.getElementById('message').innerText = 'Invalid expiration year.';
         return;
     }
 
     if (parseInt(expYear) < currentYear || 
     (parseInt(expYear) === currentYear && expMonth < currentMonth)) {
-    document.getElementById('message').innerText = 'Card has expired.';
-    return;
-}
+        //is card in date
+        document.getElementById('message').innerText = 'Card has expired.';
+        return;
+    }
 
 
     if (cvv.length < 3 || cvv.length > 4) {
+        //cvv length should be 3 or 4
         document.getElementById('message').innerText = 'Invalid CVV.';
         return;
     }
