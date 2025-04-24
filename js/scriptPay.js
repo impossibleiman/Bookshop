@@ -64,13 +64,13 @@ document.getElementById('payment-form').addEventListener('submit', function(even
         body: JSON.stringify(data)
     })
     .then(response => {
-        if (response.status === 200) {
-            const digits = cardNumber.slice(12, 16);
-            const urlParams = new URLSearchParams(window.location.search);
+        if (response.status === 200) { //if correct
+            const digits = cardNumber.slice(12, 16); //take last 4 digits of card
+            const urlParams = new URLSearchParams(window.location.search); //take current url (books and quantity)
             const code = urlParams.get('code');
-            window.location.href = 'success.html?code=' + digits.concat(code);
+            window.location.href = 'success.html?code=' + digits.concat(code); //Pass information of last 4 digits, books and quantity to next page (Accessibility)
         } else {
-            document.getElementById('message').innerText = 'Error: ' + response.status + ' (Bad Request)';
+            document.getElementById('message').innerText = 'Error: ' + response.status + ' (Bad Request)'; //error handling
         }
     })
     .catch(error => {
@@ -78,9 +78,14 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     });
 });
 
-document.getElementById('card-number-input').addEventListener('input', function (evt) {
+
+
+
+
+document.getElementById('card-number-input').addEventListener('input', function (evt) { //listens out for change in input
     const cardNumber = evt.target.value;
-    const cardImageID = cardNumber.startsWith('5') ? 'mastercard.png' : ''; // Simplified check
+    const cardImageID = cardNumber.startsWith('5') ? 'mastercard.png' : ''; 
+    // Check to see if card number starts with 5 therefore being a mastercard 
 
     // Clear previous images
     const cardNumberBox = document.getElementById('card-number-box');
@@ -100,12 +105,12 @@ document.getElementById('card-number-input').addEventListener('input', function 
     }
 });
 
-function populateCart() {
+function populateCart() { //Decode the code given from index page / cart
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     if (code) {
-        const items = code.match(/.{1,4}/g); // Split code into pairs
-        const bookDetails = {
+        const items = code.match(/.{1,4}/g); // Split code into pairs of characters
+        const bookDetails = { //Define what each bookCode is
             '01': { Title: "Dune", Author: "Frank Herbert", bookImage: 'book1.webp' },
             '02': { Title: "On Earth We're Briefly Gorgeous", Author: "Ocean Vuong", bookImage: 'book2.jpg' },
             '03': { Title: "Across the River and into the Trees", Author: "Ernest Hemingway", bookImage: 'book3.jpg' },
@@ -113,16 +118,16 @@ function populateCart() {
         };
 
         items.forEach(item => {
-            const bookInfo = bookDetails[item.slice(0, 2)];
+            const bookInfo = bookDetails[item.slice(0, 2)]; //Get Book Information
             if (bookInfo) {
-                const Quantity = parseInt(item.slice(2, 4));
+                const Quantity = parseInt(item.slice(2, 4)); //Get Quantity
                 addToCart(bookInfo.Title, bookInfo.Author, bookInfo.bookImage, Quantity);
             }
         });
     }
 }
 
-function addToCart(Title, Author, bookImage, Quantity) {
+function addToCart(Title, Author, bookImage, Quantity) { //append information to cartItem div
     const cartItem = document.createElement('div');
     cartItem.className = "Item";
     
@@ -142,5 +147,5 @@ function addToCart(Title, Author, bookImage, Quantity) {
     cartItem.appendChild(cartItemText);
 }
 
-// Call the function to populate the cart on page load
+// Call populate cart function on page load
 window.onload = populateCart;
