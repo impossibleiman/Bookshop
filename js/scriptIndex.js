@@ -18,7 +18,7 @@ function filterBooks() {
 }
 
 function addToCart(title, author) {
-    var cartItems = document.getElementById("cartItems");
+    var cartItems = document.getElementById("cartItemsDiv");
     var existingItem = Array.from(cartItems.children).find(item => item.dataset.title === title);
 
     if (existingItem) {

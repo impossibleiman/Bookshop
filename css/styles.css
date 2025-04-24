@@ -14,6 +14,7 @@ h1{
 
 button{
     background-color: #2c73df;
+    border-radius: 12px;
 }
 
 button:hover{
@@ -149,9 +150,11 @@ button:hover{
 .topnav #cartItems {
     margin-top: 10px;
     height: 100%;
+    max-height: 100vh;
     width: 300px;
     position: fixed;
-    background-color: rgba(60, 60, 60, 0.95);
+    background-color: rgba(30, 30, 30, 0.95);
+    overflow-y: auto;
 }
 
 .topnav #cartItems h3 {
@@ -162,12 +165,13 @@ button:hover{
 
 .topnav #cartItems h4 {
     font-size: 20px;
-    color: black;
+    color: white;
     margin: 0 0 0 5px;
 }
 
 .topnav #cartItems h5 {
     font-size: 16px;
+    color: #F1F1F1;
     margin: 0 0 2px 5px;
 }
 
@@ -178,9 +182,10 @@ button:hover{
 }
 
 .topnav #cartItems #checkoutbutton {
-    position: absolute;
+    position: relative;
     left: 30%;
     bottom: 10%;
+    margin-bottom: 50%;
 }
 
 .counter {
@@ -492,23 +497,9 @@ button:hover{
 
 
 
-
-
-
-
-
-
-/*                  ==============                   */
-
-
 /*                  ==============                   */
 /*                  Responsiveness                   */
 /*                  ==============                   */
-
-/*                  ==============                   */
-
-
-
 
 @media (min-width: 1000px) and (max-width: 1300px) {
     /* ===== ------ ===== */
@@ -642,12 +633,12 @@ button:hover{
 
     .topnav #cartItems h3 {
         font-size: 24px;
-        margin: 0 0 0 0;
+        margin: 0 15% 0 0;
     }
 
     .topnav #cartItems h4 {
         font-size: 18px;
-        margin: 0 0 0 5px;
+        margin: 5px 0 0px 5px;
     }
 
     .topnav #cartItems h5 {
@@ -664,10 +655,10 @@ button:hover{
     }
 
     .topnav #cartItems #checkoutbutton {
-        position: absolute;
-        left: 30%;
-        bottom: 10%;
+        left: 25%;
     }
+
+    /*Make text smaller for smaller screens*/
 
            /**/
         /* Search */
@@ -703,17 +694,21 @@ button:hover{
         display: inline-block;
     }
 
+    /*Make search bar and cart button smaller*/
+
             /**/
         /*  Cards */
              /**/
     .container .card .slide.slide1 {
         margin-top: 8%;
     }
+    /*More space for each card*/
 
     .card {
         margin-left: 27.5%;
         transform: scale(0.7);
     }
+    /*Make each card smaller*/
 
     .container .card .slide.slide2 {
         transform: translateX(0);
@@ -727,15 +722,13 @@ button:hover{
     .topnav .title {
         display: none;
     }
-
-    .topnav .search {
-        margin-left: 0;
-    }
+    /*Remove title from navigation bar as theres not a lot of space*/
 
     .container .card:hover .slide.slide2 {
         transform: scale(2);
         margin-left: -24.5%;
     }
+    /*When the user interacts with the card, it'll increase in size so that its more readable - accessibility*/
 
     .container .card:hover .slide.slide1 {
         transform: translateX(-120%);
@@ -749,6 +742,8 @@ button:hover{
     .container .card:hover .slide.slide2 .content button {
         transform: scale(1);
     }
+    /*Only show add to cart button when card is focused on to prevent accidental presses*/
+
 
 }
 
@@ -777,6 +772,7 @@ button:hover{
     .card {
         margin-left: 10%;
     }
+    /*Adjust card position for slighter bigger (than phone) screens*/
 
     .topnav .title {
         margin-left: 1%;
@@ -785,10 +781,12 @@ button:hover{
     .topnav .search {
         margin-left: 0;
     }
+    /*Adjust navigation bar*/
 
     .container .card:hover .slide.slide2 {
         transform: scale(1.35);
     }
+    /*Scale does not need to be as big as <620px since there is no card downscale*/
 }
 
 
@@ -801,17 +799,18 @@ button:hover{
 
 @media (max-width: 550px) {
     /* ===== ------ ===== */
-    /* ===== INDEX ====== */
+    /* ===== PAY ====== */
     /* ===== ------ ===== */
 
             /**/
-        /*  Cards */
-             /**/  
+        /*  MasterCard */
+                  /**/  
     .cardImage {
         position: fixed;
         right: 5%;
         top: 28%;
     }
+    /*Move MasterCard image so that it falls next to the input*/ 
 }
 
 
@@ -827,12 +826,21 @@ button:hover{
     .slide-in-reverse {
         transform: translateX(-50%);
     }
+
     .topnav #cartItems {
         width: 250px;
         right:auto;
     }
+    /*Reduce cart width*/
 
     .topnav #cartItems #removebutton {
         margin: -40px 0 0 40%;
     }
+    /*Bring remove button closer to items*/
+    
+
+    .topnav #cartItems #checkoutbutton {
+        left: 20%;
+    }
+    /*Center align button*/
 }
