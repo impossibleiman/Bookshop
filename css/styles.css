@@ -75,8 +75,8 @@ button:hover{
     display: block;
 }
 
-.burger:hover .line {
-    background-color: black;
+.burger .topicon:hover .line {
+    background-color: #1a1a1a;
 }
 
 .topnav .title {
